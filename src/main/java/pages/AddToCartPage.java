@@ -15,7 +15,7 @@ public class AddToCartPage {
 	WebDriverWait wait;
 	
 	private static final By imgProduct = By.xpath("//img[contains(normalize-space(@alt),'Manette Gaming Redragon Saturn G807')]");
-	private static final   By addToCart = By.cssSelector("span[class='text-sm xl\\:text-lg font-bold']");    
+	private static final   By addToCart = By.id("product-addtocart-button");    
 	private static final   By msgOfsuccs= By.cssSelector("span[x-html='message.text']");
 	private static final   By clickCart = By.cssSelector("button[id='menu-cart-icon']");
 	private static final   By title = By.xpath("//div[@class='text-23 sm:text-6xl font-bold leading-7 text-primary flex items-center gap-4 pt-3 sm:pt-4 justify-center sm:justify-start']");
@@ -28,10 +28,19 @@ public class AddToCartPage {
     }
     //function
     public void addtoCart() {
-    	
         wait.until(ExpectedConditions.elementToBeClickable(imgProduct)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
 
+        WebElement button = wait.until(
+            ExpectedConditions.elementToBeClickable(addToCart)
+        );
+
+        button.click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     //assert by text 
     public void assertAddprod() {
@@ -44,17 +53,19 @@ public class AddToCartPage {
     
     //function click on Cart
     public void clickonCart() {
-    	driver.findElement(clickCart).click();
-    
-  
-    	
-    try {
-    	Thread.sleep(4000);
-    } catch (InterruptedException e) {
-    	// TODO Auto-generated catch block
-    	e.printStackTrace();
-    }
 
+        wait.until(ExpectedConditions.elementToBeClickable(clickCart)).click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("URL actuelle : " + driver.getCurrentUrl());
+
+        System.out.println("HTML du panier : " +
+            driver.findElement(clickCart).getAttribute("outerHTML"));
     }
     
     public void assertPrice() {
