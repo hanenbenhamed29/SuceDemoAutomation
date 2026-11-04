@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+    <test name="Test">
+
+        <parameter name="url" value="https://batam.com.tn/customer/account/create/"/>
+
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.RegisterTest"/>
+            <class name="tests.SearchTest"/>
+            <class name="tests.AddProductToCartTest"/>
+            <class name="tests.PaimentTest"/>
+
+
+      
+          
+        </classes>
+
+    </test>
+</suite>
