@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -13,7 +14,7 @@ public class AddToCartPage {
 	WebDriver driver;
 	WebDriverWait wait;
 	
-	private static final   By imgProduct=By.xpath("//img[@alt=' Manette Gaming Redragon Saturn G807 - Noir']");
+	private static final By imgProduct = By.xpath("//img[contains(normalize-space(@alt),'Manette Gaming Redragon Saturn G807')]");
 	private static final   By addToCart = By.cssSelector("span[class='text-sm xl\\:text-lg font-bold']");    
 	private static final   By msgOfsuccs= By.cssSelector("span[x-html='message.text']");
 	private static final   By clickCart = By.cssSelector("button[id='menu-cart-icon']");
@@ -28,8 +29,8 @@ public class AddToCartPage {
     //function
     public void addtoCart() {
     	
-    	driver.findElement(imgProduct).click();
-    	driver.findElement(addToCart).click();
+        wait.until(ExpectedConditions.elementToBeClickable(imgProduct)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
 
     }
     //assert by text 
