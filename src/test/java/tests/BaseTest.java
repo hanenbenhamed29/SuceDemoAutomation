@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.testng.annotations.AfterTest;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeTest;
 //import org.testng.annotations.Parameters;
 
@@ -15,7 +15,11 @@ public class BaseTest {
     @BeforeTest
     public void setUp() {
 
-        driver = new ChromeDriver();
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--no-proxy-server");
+    	options.addArguments("--proxy-bypass-list=*");
+
+    	driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
 
