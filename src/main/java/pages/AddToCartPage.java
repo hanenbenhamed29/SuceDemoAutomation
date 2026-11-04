@@ -14,7 +14,6 @@ public class AddToCartPage {
 	WebDriver driver;
 	WebDriverWait wait;
 	
-	private static final By imgProduct = By.xpath("//img[contains(normalize-space(@alt),'Manette Gaming Redragon Saturn G807')]");
 	private static final   By addToCart = By.id("product-addtocart-button");    
 	private static final   By msgOfsuccs= By.cssSelector("span[x-html='message.text']");
 	private static final   By clickCart = By.cssSelector("button[id='menu-cart-icon']");
@@ -28,7 +27,7 @@ public class AddToCartPage {
     }
     //function
     public void addtoCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(imgProduct)).click();
+        
 
         WebElement button = wait.until(
             ExpectedConditions.elementToBeClickable(addToCart)
