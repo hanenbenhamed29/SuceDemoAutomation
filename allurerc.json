@@ -1,0 +1,30 @@
+
+{
+  "name": "SuceDemoAutomation",
+  "output": "./allure-report",
+  "plugins": {
+    "awesome": {
+      "options": {
+        "reportName": "SuceDemoAutomation",
+        "singleFile": false,
+        "reportLanguage": "en",
+        "charts": [
+          {
+            "type": "currentStatus",
+            "title": "Test Results"
+          },
+          {
+            "type": "durations",
+            "title": "Durations Histogram",
+            "groupBy": "none"
+          },
+          {
+            "type": "testingPyramid",
+            "title": "Testing Pyramid",
+            "layers": ["unit", "integration", "e2e"]
+          }
+        ]
+      }
+    }
+  }
+}
