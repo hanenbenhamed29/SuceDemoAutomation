@@ -32,7 +32,7 @@ public class RegisterPages {
 	private static final  By chekname = By.xpath("//span[text()='Se connecter']");
 	
 	
-    public void Loginpage(String email,String password,String checkpass) {
+    public void registere(String email,String password,String checkpass) {
 		 driver.findElement(inputEmail).sendKeys(email);
 	     driver.findElement(inputPassword).sendKeys(password);
 	     driver.findElement(checkPassword).sendKeys(checkpass);

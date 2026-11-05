@@ -8,12 +8,12 @@ import pages.RegisterPages;
 public class RegisterTest extends BaseTest {
 
     @Test(priority = 1)
-    public void loginTest() {
+    public void register() {
 
-        RegisterPages login = new RegisterPages(driver);
+        RegisterPages reg = new RegisterPages(driver);
 
-        login.Loginpage("hanenbenhamed2026@gmail.com", "hanen2026&" ,"hanen2026&");
-        Assert.assertTrue(login.assertHomePage(),"login failed");
+        reg.registere("hanenbenhamed2026@gmail.com", "hanen2026&" ,"hanen2026&");
+        Assert.assertTrue(reg.assertHomePage(),"register failed");
         //login.assertHomePage();
         
     }
