@@ -6,8 +6,8 @@
         <parameter name="url" value="https://batam.com.tn/customer/account/create/"/>
 
         <classes>
-            <class name="tests.LoginTest"/>
             <class name="tests.RegisterTest"/>
+            <class name="tests.LoginnTest"/>
             <class name="tests.SearchTest"/>
             <class name="tests.AddProductToCartTest"/>
             <class name="tests.PaimentTest"/>
