@@ -22,6 +22,7 @@ public class PaiementPage {
 
 	 }
    //locators
+	private static final By clickCart = By.id("menu-cart-icon");
 	
 	private static final By paiemen = By.cssSelector("a[href='https://batam.com.tn/checkout/']");
 	private static final By email1 =By.id("-guest_details-email_address");
@@ -37,7 +38,7 @@ public class PaiementPage {
 	
 	private static final By livraison = By.xpath("//input[@type='radio' and @id='shipping-method-flatrate']");
 	private static final By paiement =  By.cssSelector("input#payment-method-cashondelivery");	
-	private static final By buttonCommander =By.xpath("//button[normalize-space()='Valider la Commande']");
+	//private static final By buttonCommander =By.xpath("//button[normalize-space()='Valider la Commande']");
 	
 	
 	
@@ -45,8 +46,31 @@ public class PaiementPage {
 	public void paimant(String email,String firstname,String lastname,String adress,String phone)  {
 		
 		
-		wait.until(ExpectedConditions.elementToBeClickable(paiemen)).click();
-		  
+		// Ouvrir le mini-panier
+		wait.until(ExpectedConditions.elementToBeClickable(clickCart)).click();
+		
+		
+		try {
+		    Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
+		
+		
+		
+
+		// Attendre que le lien Checkout soit visible
+		WebElement checkout = wait.until(
+			    ExpectedConditions.elementToBeClickable(paiemen)
+			);
+
+			checkout.click();
+
+		// Cliquer sur Checkout
+		//wait.until(ExpectedConditions.elementToBeClickable(paiemen)).click();
+		
+		
+		
 		
 		WebElement emaiil=driver.findElement(email1);
 		emaiil.clear();
@@ -110,8 +134,8 @@ public class PaiementPage {
 				e.printStackTrace();
 			}
 		  
-		 WebElement buttoncommand =driver.findElement(buttonCommander);
-				 buttoncommand.click();
+		/* WebElement buttoncommand =driver.findElement(buttonCommander);
+				 buttoncommand.click();*/
 
 
 	    }

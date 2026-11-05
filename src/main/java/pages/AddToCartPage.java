@@ -16,7 +16,7 @@ public class AddToCartPage {
 	
 	private static final   By addToCart = By.id("product-addtocart-button");    
 	private static final   By msgOfsuccs= By.cssSelector("span[x-html='message.text']");
-	private static final   By clickCart = By.cssSelector("button[id='menu-cart-icon']");
+	private static final   By clickCart = By.id("menu-cart-icon");
 	private static final   By title = By.xpath("//div[@class='text-23 sm:text-6xl font-bold leading-7 text-primary flex items-center gap-4 pt-3 sm:pt-4 justify-center sm:justify-start']");
 
     //constructor
