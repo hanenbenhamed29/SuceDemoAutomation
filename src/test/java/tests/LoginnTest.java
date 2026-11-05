@@ -11,8 +11,7 @@ public class LoginnTest extends BaseTest {
 	public void loginpage() {
 		LoginPage log = new LoginPage(driver);
 		log.lo("hanenbenhamed2026@gmail.com", "hanen2026&");
-		log.assertPersonelaccount();
-		
+		log.assertPersonelaccount();		
 	}
 	
 }

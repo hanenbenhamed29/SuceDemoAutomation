@@ -25,8 +25,8 @@ public class LoginPage {
 	
 	
 	//Locators
-	private static final  By fieldEmail = By.name("login[username]");
-	private static final  By FieldPassword= By.name("login[password]");
+	private static final  By fieldEmail = By.cssSelector("input[name='login[username]']");
+	private static final  By FieldPassword= By.cssSelector("input[name='login[password]']");;
 	private static final  By buttonConnexion=By.xpath("//button[.//span[text()='Connexion']]");
 	private static final By message =By.xpath("//span[@class='base' and@data-ui-id='page-title-wrapper']");
 	
