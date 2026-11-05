@@ -1,13 +1,15 @@
 package tests;
 
 import org.testng.annotations.Test;
+
+import io.qameta.allure.Allure;
 import pages.AddToCartPage;
 
 public class AddProductToCartTest extends BaseTest {
 
     @Test(priority = 4)
     public void AddCart() {
-
+    	Allure.label("layer", "e2e");
         driver.get("https://batam.com.tn/manette-redragon-saturn-g807-43007996.html");
 
         AddToCartPage product = new AddToCartPage(driver);

@@ -4,12 +4,14 @@ package tests;
 
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Allure;
 import pages.AddToCartPage;
 import pages.PaiementPage;
 
 public class PaimentTest extends BaseTest {
 @Test(priority=5)
 	public void paimentByCard() {
+	Allure.label("layer", "e2e");
     driver.get("https://batam.com.tn/manette-redragon-saturn-g807-43007996.html");
 
     // 2. Ajouter le produit au panier
