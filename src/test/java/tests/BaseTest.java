@@ -18,6 +18,10 @@ public class BaseTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        System.out.println("Taille Chrome : " +
+        	    driver.manage().window().getSize());
+
+        	System.out.println("URL : " + driver.getCurrentUrl());
         driver.get("https://batam.com.tn/customer/account/create/");
     }
 
